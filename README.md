@@ -40,3 +40,23 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+### Project file Structure
+
+    ├── .circleci
+    │   └── config.yml                            # Circle CI configuration file
+    ├── model_data                                # Directory with model data
+    │   ├── boston_housing_prediction.joblib
+    │   └── housing.csv
+    ├── output_txt_files                          # Directory with output from docker/kubernetes
+    │   ├── docker_out.txt
+    │   └── kubernetes_out.txt
+    ├── Dockerfile                                # Docker build configuration
+    ├── Makefile                                  # Makefile with different utility targets
+    ├── README.md
+    ├── app.py                                    # Python Flask API
+    ├── make_prediction.sh                        # Script to call the ML api
+    ├── requirements.txt
+    ├── run_docker.sh                             # script to build and run app as a container
+    ├── run_kubernetes.sh                         # script to run docker image in kubernetes
+    └── upload_docker.sh                          # script to publish docker image to Hub

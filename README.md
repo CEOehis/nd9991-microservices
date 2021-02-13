@@ -33,6 +33,7 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
+4. Request for a prediction: `./make_prediction.sh`
 
 ### Kubernetes Steps
 

@@ -15,8 +15,11 @@ install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 	# Install hadolint
-	wget -O ./hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
-	chmod +x ./hadolint
+	# Create temp bin folder for hadolint (so we avoid using sudo to move the hadolint binary to /usr/local)
+	mkdir -p ./tmp/bin
+	wget -O ./tmp/bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
+	chmod +x ./tmp/bin/hadolint
+	export PATH=./tmp/bin:$PATH
 
 test:
 	# Additional, optional, tests could go here
